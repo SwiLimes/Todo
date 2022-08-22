@@ -1,0 +1,83 @@
+/*Полоса сверху TODO*/
+#head {
+    text-align: center;
+    background: green;
+    margin: auto;
+    font-family: sans-serif;
+    color: lightyellow;
+    border-style: unset;
+}
+
+.wrapper {
+    display: flex;
+    margin: 10px auto;
+}
+
+#taskBlock, #functionBlock {
+    height: auto;
+}
+
+#taskBlock {
+    background: white;
+    width: 50%;
+    text-align: center;
+    margin: 20px auto;
+    font-family: Verdana;
+    font-size: 25px;
+}
+
+#functionBlock {
+    background: lightgray;
+    width: 50%;
+}
+
+#functionBlock button{
+    list-style-type: none;
+    display: block;
+    /*border: green solid 1px;*/
+    width: 80%;
+    margin: 10px auto;
+    padding: 5px;
+    background-color: yellowgreen;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#task:hover, #functionBlock button:hover {
+    background-color: greenyellow;
+}
+
+#task input {
+    float: right;
+}
+
+.noActive, .active {
+    list-style-type: none;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.noActive {
+    border: green solid 1px;
+    background: green;
+}
+.active {
+    border: black solid 3px;
+    background: greenyellow;
+}
+
+#taskBlock {
+    cursor: pointer;
+}
+
+
