@@ -2,7 +2,7 @@ const taskList = document.getElementById('list'),
     controlList = document.querySelector('.functionBlock');
 
 
-let todo = [];
+let todo = [];          //Массив, который хранит все задачи
 if(localStorage.getItem('todo').length !=0 ) todo = JSON.parse(localStorage.getItem('todo'));
 
 
@@ -13,7 +13,7 @@ let selectedIndex;
 
 
 /*
-    Смена классов при нажатии на объект
+    Смена классов при нажатии на объект, выделение элемента
  */
 document.addEventListener('DOMContentLoaded', () => {
     taskList.addEventListener('click', event => {
@@ -44,6 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
     render(todo, taskList);
 })
 
+/*
+    Отрисовка элементов в блоке задач
+ */
 function render(todo, elem) {
     // Очищается поле с задачами
     taskList.replaceChildren();
@@ -154,9 +157,6 @@ class Control {
         if (optionId) {
             this[optionId]();
             if(optionId != 'changeTask') render(todo, taskList);
-            else {
-
-            }
             save();
             selectedTask = null;
         }
