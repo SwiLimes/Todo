@@ -1,39 +1,51 @@
 /*Полоса сверху TODO*/
 #head {
     text-align: center;
-    background: green;
+    background: forestgreen;
     margin: auto;
-    font-family: sans-serif;
-    color: lightyellow;
-    border-style: unset;
+    font-family: Verdana;
+    color: white;
 }
 
 .wrapper {
     display: flex;
-    margin: 10px auto;
+    flex-direction: row;
 }
 
-#taskBlock, #functionBlock {
+.taskBlock, .functionBlock {
     height: auto;
 }
 
-#taskBlock {
+.taskBlock {
     background: white;
-    width: 50%;
+    width: 65%;
+}
+
+.functionBlock {
+    background: white;
+    width: 35%;
+    border-left: forestgreen solid 1px;
+}
+
+.blockHead {
+    display: block;
+    margin: 10px auto 50px auto;
+    color: forestgreen;
+    text-align: center;
+    font-size: 35px;
+    font-family: Verdana;
+}
+
+#list {
     text-align: center;
     margin: 20px auto;
     font-family: Verdana;
     font-size: 25px;
 }
-
-#functionBlock {
-    background: lightgray;
-    width: 50%;
-}
-
-#functionBlock button{
+.functionBlock input{
     list-style-type: none;
     display: block;
+    box-sizing: border-box;
     /*border: green solid 1px;*/
     width: 80%;
     margin: 10px auto;
@@ -46,11 +58,16 @@
     cursor: pointer;
 }
 
-#task:hover, #functionBlock button:hover {
-    background-color: greenyellow;
+.changeForm input {
+    background: white !important;
+    width: 50%;
 }
 
-#task input {
+.taskBlock li:hover, .functionBlock input:hover {
+    background-color: greenyellow !important;
+}
+
+.taskBlock li input{
     float: right;
 }
 
@@ -69,14 +86,13 @@
 
 .noActive {
     border: green solid 1px;
-    background: green;
+    background: yellowgreen;
 }
 .active {
     border: black solid 3px;
-    background: greenyellow;
 }
 
-#taskBlock {
+.taskBlock li {
     cursor: pointer;
 }
 

@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>todo</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="todo.css">
-    </head>
-    <body>
-        <h1 id="head">TODO</h1>
-        <div class="wrapper">
-            <div id="taskBlock">Список задач
-                <ol id="list">
-                    <li id="task">first</li>
-                </ol>
-        </div>
-            <div id="functionBlock">
-<!--                <button data-action="change" >Изменить</button>-->
-<!--                <button data-action="add">Добавить</button>-->
-<!--                <button id="deleteBtn">Удалить</button>-->
-<!--                <button data-action="up">Поднять</button>-->
-<!--                <button data-action="down">Опустить</button>-->
-                    <input type="button" id="changeTask" value="Изменить" onclick="">
-                <p><input type="button" id=addTask" value="Добавить задачу" onclick="addItem();"></p>
-                    <input type="button" id="deleteTask" value="Удалить задачу" onclick="">
-                    <input type="button" id="upTask" value="Вверх" onclick="">
-                    <input type="button" id="downTask" value="Вниз" onclick="">
-<!--                </ul>-->
-
-            </div>
-        </div>
-        <script src="todo.js"></script>
-    </body>
+<head>
+    <title>Todo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+<h1 id="head">TO-DO</h1>
+<div class="wrapper">
+    <div class="taskBlock">
+        <strong class="blockHead">Список задач</strong>
+        <ul id="list">
+            <li id="task"></li>
+        </ul>
+    </div>
+    <div class="functionBlock">
+        <strong class="blockHead">Управление</strong>
+        <input type="button" id="changeTask" value="Изменить">
+<!--        <form class="changeForm" type="hidden">-->
+<!--            <input type="text" id="changeText">-->
+<!--            <input type="color" id="changeColor">-->
+<!--        </form>-->
+        <input type="button" id="addTask" value="Добавить задачу">
+        <input type="button" id="deleteTask" value="Удалить задачу">
+        <input type="button" id="upTask" value="Вверх">
+        <input type="button" id="downTask" value="Вниз">
+    </div>
+</div>
+<script src="todo.js"></script>
+</body>
 </html>
