@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        .elemm1 {
+            list-style-type: square;
+            color: green;
+            background: red;
+        }
+
+        .elemm2 {
+            list-style-type: disc;
+            color: red;
+        }
+
+        .elemm3 {
+            list-style-type: circle;
+            color: black;
+        }
+
+        .active {
+            border: 2px solid violet;
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+    <li class="elemm">
+        First
+    </li>
+    <li class="elemm">
+        Second
+    </li>
+    <li class="elemm">
+        Third
+    </li>
+</ul>
+<button id="delete">Delete current</button>
+
+<script>
+    const elemm = document.querySelectorAll('.elemm');
+    let current; // undefined
+
+    function elemm_click() {
+        if (current && current !== this) // Если был другой активный
+            current.classList.remove("active");
+
+        this.classList.add("active"); // Активным стал этот элемент
+        current = this;
+    }
+
+    for (let e of elemm) {
+        e.addEventListener("click", elemm_click);
+    }
+    const delet = document.getElementById('delete');
+    delet.addEventListener('click', () => {
+        if (current) current.remove();
+    })
+</script>
+</body>
+</html>
