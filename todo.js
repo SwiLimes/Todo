@@ -2,9 +2,7 @@ const taskList = document.getElementById('list'),
     controlList = document.querySelector('.functionBlock');
 
 
-let todo = [];          //Массив, который хранит все задачи
-if(localStorage.getItem('todo').length !=0 ) todo = JSON.parse(localStorage.getItem('todo'));
-
+let todo = localStorage.getItem('todo') ? JSON.parse(localStorage.getItem('todo')) : [];
 
 let idIndex = 0;        //Счетчик для создания id у объектов-задач
 
@@ -40,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         else todo[selectedIndex].done = false;
         save();
     });
-
     render(todo, taskList);
 })
 
@@ -96,19 +93,23 @@ class Control {
         if (!selectedTask) return;
 
         let task = todo[selectedIndex];
-        let newName = prompt("Введите изменения");
-        if (newName == null || newName == '') {
+        let newText = prompt("Введите изменения");
+        if (newText == null || newText == '') {
             alert("Вы ничего не измении");
             return;
         }
-        task.text = newName;
+        todo[selectedIndex].text = newText;
 
         let newColor = prompt('Новый цвет');
         todo[selectedIndex].color = newColor;
 
-        selectedTask = null;
+        let checkbox = selectedTask.childNodes[1];
 
-        render(todo, taskList);
+        selectedTask.textContent = newText;
+        selectedTask.style.backgroundColor = newColor;
+        selectedTask.append(checkbox);
+        selectedTask.classList.remove('active');
+        selectedTask.classList.add('noActive');
     }
 
     addTask() {
